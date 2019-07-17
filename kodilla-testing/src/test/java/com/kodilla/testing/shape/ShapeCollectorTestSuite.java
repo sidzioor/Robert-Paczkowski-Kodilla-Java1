@@ -64,7 +64,7 @@ public class ShapeCollectorTestSuite {
         //When
         double triangleResult = 4*5*0.5;
         double squareResult = 4*4;
-        double circleResult = 3.14*(3*3);
+        double circleResult = 3.14*3*3;
         //Than
         Assert.assertEquals(squareResult, square.getField(), 0.01);
         Assert.assertEquals(triangleResult, triangle.getField(), 0.01);

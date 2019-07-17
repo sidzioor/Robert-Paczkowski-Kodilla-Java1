@@ -30,7 +30,7 @@ public class ShapeCollector {
             return theShape;
     }
 
-    public String showFigures() {
-        return null;
+    public void showFigures() {
+
     }
 }

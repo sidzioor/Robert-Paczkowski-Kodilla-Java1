@@ -1,10 +1,10 @@
 package com.kodilla.testing.shape;
 
 public class Square implements Shape {
-    private double squareSide;
+    private double side;
 
-    public Square(double squareSide) {
-        this.squareSide = squareSide;
+    public Square(double side) {
+        this.side = side;
     }
 
     @Override
@@ -14,7 +14,7 @@ public class Square implements Shape {
 
     @Override
     public double getField() {
-        return squareSide * squareSide;
+        return side * side;
     }
 
     @Override
@@ -24,12 +24,12 @@ public class Square implements Shape {
 
         Square square = (Square) o;
 
-        return Double.compare(square.squareSide, squareSide) == 0;
+        return Double.compare(square.side, side) == 0;
     }
 
     @Override
     public int hashCode() {
-        long temp = Double.doubleToLongBits(squareSide);
+        long temp = Double.doubleToLongBits(side);
         return (int) (temp ^ (temp >>> 32));
     }
 }

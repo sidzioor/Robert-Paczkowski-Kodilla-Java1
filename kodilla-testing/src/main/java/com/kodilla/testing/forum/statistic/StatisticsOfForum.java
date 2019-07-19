@@ -45,11 +45,21 @@ public class StatisticsOfForum {
         }
     }
 
-    public ArrayList<String> showStatistics() {
-        ArrayList<String> averagesList = new ArrayList<>();
-        averagesList.add(0, String.format("%.2f", averagePostsPerUser));
-        averagesList.add(1, String.format("%.2f", averageCommentPerUser));
-        averagesList.add(2, String.format("%.2f", averageCommentPerPost));
-        return averagesList;
+    public double getAveragePostsPerUser() {
+        return averagePostsPerUser;
+    }
+
+    public double getAverageCommentPerUser() {
+        return averageCommentPerUser;
+    }
+
+    public double getAverageCommentPerPost() {
+        return averageCommentPerPost;
+    }
+
+    public void showStatistics() {
+        System.out.println(averagePostsPerUser);
+        System.out.println(averageCommentPerUser);
+        System.out.println(averageCommentPerPost);
     }
 }

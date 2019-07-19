@@ -1,7 +1,6 @@
 package com.kodilla.testing.forum.statistic;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class StatisticsOfForum {
     Statistics statistics;
@@ -30,25 +29,27 @@ public class StatisticsOfForum {
 
     public void calculateAdvStatistics(Statistics statistics) {
         if (statistics.postsCount() != 0 && statistics.usersNames().size() != 0) {
-            averagePostsPerUser = (double)statistics.postsCount() / (double)statistics.usersNames().size();
+            averagePostsPerUser = (double) statistics.postsCount() / (double) statistics.usersNames().size();
         } else {
             averagePostsPerUser = 0;
         }
         if (statistics.commentsCount() != 0 && statistics.usersNames().size() != 0) {
-            averageCommentPerUser = (double)statistics.commentsCount() / (double) statistics.usersNames().size();
+            averageCommentPerUser = (double) statistics.commentsCount() / (double) statistics.usersNames().size();
         } else {
             averageCommentPerUser = 0;
         }
         if (statistics.postsCount() != 0 && statistics.postsCount() != 0) {
-            averageCommentPerPost = (double)statistics.commentsCount() / (double)statistics.postsCount();
+            averageCommentPerPost = (double) statistics.commentsCount() / (double) statistics.postsCount();
         } else {
             averageCommentPerPost = 0;
         }
     }
 
-    public String showStatistics() {
-        return "Average posts per user = " + String.format("%.2f", averagePostsPerUser) + "\n" +
-                "Average comment per user = " + String.format("%.2f", averageCommentPerUser) +
-                "\n" + "Average comments per post = " + String.format("%.2f", averageCommentPerPost);
+    public ArrayList<String> showStatistics() {
+        ArrayList<String> averagesList = new ArrayList<>();
+        averagesList.add(0, String.format("%.2f", averagePostsPerUser));
+        averagesList.add(1, String.format("%.2f", averageCommentPerUser));
+        averagesList.add(2, String.format("%.2f", averageCommentPerPost));
+        return averagesList;
     }
 }

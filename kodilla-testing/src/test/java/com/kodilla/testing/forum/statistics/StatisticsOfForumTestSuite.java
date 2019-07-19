@@ -77,12 +77,15 @@ public class StatisticsOfForumTestSuite {
 
         //When
         statisticsOfForum.calculateAdvStatistics(averageMock);
-        String averages = statisticsOfForum.showStatistics();
-
+        ArrayList<String> averagesList = statisticsOfForum.showStatistics();
+        String averages0 = averagesList.get(0);
+        String averages1 = averagesList.get(1);
+        String averages2 = averagesList.get(2);
 
         //Then
-        Assert.assertEquals("Average posts per user = 3,36\nAverage comment per user = 7,23\n" +
-                "Average comments per post = 2,15", averages);
+        Assert.assertEquals("3,36", averages0);
+        Assert.assertEquals("7,23", averages1);
+        Assert.assertEquals("2,15", averages2);
     }
 
     @Test
@@ -102,12 +105,15 @@ public class StatisticsOfForumTestSuite {
 
         //When
         statisticsOfForum.calculateAdvStatistics(averageMock);
-        String averages1 = statisticsOfForum.showStatistics();
-
+        ArrayList<String> averagesList = statisticsOfForum.showStatistics();
+        String averages0 = averagesList.get(0);
+        String averages1 = averagesList.get(1);
+        String averages2 = averagesList.get(2);
 
         //Then
-        Assert.assertEquals("Average posts per user = 67,42\nAverage comment per user = 10,00\n" +
-                "Average comments per post = 0,15", averages1);
+        Assert.assertEquals("67,42", averages0);
+        Assert.assertEquals("10,00", averages1);
+        Assert.assertEquals("0,15", averages2);
     }
 
     @Test
@@ -123,12 +129,15 @@ public class StatisticsOfForumTestSuite {
 
         //When
         statisticsOfForum.calculateAdvStatistics(averageMock);
-        String averages1 = statisticsOfForum.showStatistics();
-
+        ArrayList<String> averagesList = statisticsOfForum.showStatistics();
+        String averages0 = averagesList.get(0);
+        String averages1 = averagesList.get(1);
+        String averages2 = averagesList.get(2);
 
         //Then
-        Assert.assertEquals("Average posts per user = 0,00\nAverage comment per user = 0,00\n" +
-                "Average comments per post = 0,46", averages1);
+        Assert.assertEquals("0,00", averages0);
+        Assert.assertEquals("0,00", averages1);
+        Assert.assertEquals("0,46", averages2);
     }
     @Test
     public void testCalculateAdvStatistics3() {
@@ -147,12 +156,15 @@ public class StatisticsOfForumTestSuite {
 
         //When
         statisticsOfForum.calculateAdvStatistics(averageMock);
-        String averages = statisticsOfForum.showStatistics();
-
+        ArrayList<String> averagesList = statisticsOfForum.showStatistics();
+        String averages0 = averagesList.get(0);
+        String averages1 = averagesList.get(1);
+        String averages2 = averagesList.get(2);
 
         //Then
-        Assert.assertEquals("Average posts per user = 0,00\nAverage comment per user = 3,36\n" +
-                "Average comments per post = 0,00", averages);
+        Assert.assertEquals("0,00", averages0);
+        Assert.assertEquals("3,36", averages1);
+        Assert.assertEquals("0,00", averages2);
     }
     @Test
     public void testCalculateAdvStatistics4() {
@@ -171,11 +183,14 @@ public class StatisticsOfForumTestSuite {
 
         //When
         statisticsOfForum.calculateAdvStatistics(averageMock);
-        String averages = statisticsOfForum.showStatistics();
-
+        ArrayList<String> averagesList = statisticsOfForum.showStatistics();
+        String averages0 = averagesList.get(0);
+        String averages1 = averagesList.get(1);
+        String averages2 = averagesList.get(2);
 
         //Then
-        Assert.assertEquals("Average posts per user = 3,36\nAverage comment per user = 0,00\n" +
-                "Average comments per post = 0,00", averages);
+        Assert.assertEquals("3,36", averages0);
+        Assert.assertEquals("0,00", averages1);
+        Assert.assertEquals("0,00", averages2);
     }
 }

@@ -80,9 +80,9 @@ public class StatisticsOfForumTestSuite {
         double averages2 = statisticsOfForum.getAverageCommentPerPost();
 
         //Then
-        Assert.assertEquals(3.36, averages0, 2);
-        Assert.assertEquals(7.23, averages1, 2);
-        Assert.assertEquals(2.15, averages2, 2);
+        Assert.assertEquals(3.36, averages0, 0.01);
+        Assert.assertEquals(7.23, averages1, 0.01);
+        Assert.assertEquals(2.15, averages2, 0.01);
     }
 
     @Test
@@ -107,9 +107,9 @@ public class StatisticsOfForumTestSuite {
         double averages2 = statisticsOfForum.getAverageCommentPerPost();
 
         //Then
-        Assert.assertEquals(67.42, averages0, 2);
-        Assert.assertEquals(10.00, averages1, 2);
-        Assert.assertEquals(0.15, averages2, 2);
+        Assert.assertEquals(67.42, averages0, 0.01);
+        Assert.assertEquals(10.00, averages1, 0.01);
+        Assert.assertEquals(0.15, averages2, 0.01);
     }
 
     @Test
@@ -130,9 +130,9 @@ public class StatisticsOfForumTestSuite {
         double averages2 = statisticsOfForum.getAverageCommentPerPost();
 
         //Then
-        Assert.assertEquals(0.00, averages0, 2);
-        Assert.assertEquals(0.00, averages1, 2);
-        Assert.assertEquals(0.46, averages2, 2);
+        Assert.assertEquals(0.00, averages0, 0.01);
+        Assert.assertEquals(0.00, averages1, 0.01);
+        Assert.assertEquals(0.46, averages2, 0.01);
     }
 
     @Test
@@ -157,9 +157,9 @@ public class StatisticsOfForumTestSuite {
         double averages2 = statisticsOfForum.getAverageCommentPerPost();
 
         //Then
-        Assert.assertEquals(0.00, averages0, 2);
-        Assert.assertEquals(3.36, averages1, 2);
-        Assert.assertEquals(0.00, averages2, 2);
+        Assert.assertEquals(0.00, averages0, 0.01);
+        Assert.assertEquals(3.36, averages1, 0.01);
+        Assert.assertEquals(0.00, averages2, 0.01);
     }
 
     @Test
@@ -184,8 +184,8 @@ public class StatisticsOfForumTestSuite {
         double averages2 = statisticsOfForum.getAverageCommentPerPost();
 
         //Then
-        Assert.assertEquals(3.36, averages0, 2);
-        Assert.assertEquals(0.00, averages1, 2);
-        Assert.assertEquals(0.00, averages2, 2);
+        Assert.assertEquals(3.36, averages0, 0.01);
+        Assert.assertEquals(0.00, averages1, 0.01);
+        Assert.assertEquals(0.00, averages2, 0.01);
     }
 }

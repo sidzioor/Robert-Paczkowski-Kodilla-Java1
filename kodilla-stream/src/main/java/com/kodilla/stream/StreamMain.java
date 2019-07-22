@@ -10,10 +10,12 @@ import java.util.stream.Collectors;
 public class StreamMain {
     public static void main(String[] args) {
         Forum theForum = new Forum();
-        LocalDate check20Years = LocalDate.now().minusYears(20);
         Map<Integer, ForumUser> theResultMapOfUsers = theForum.getUsersList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'M')
-                .filter(forumUser -> forumUser.getBirthDate().isBefore(check20Years))
+                .filter(forumUser -> {
+                    LocalDate check20Years = LocalDate.now().minusYears(20);
+                    return forumUser.getBirthDate().isBefore(check20Years);
+                })
                 .filter(forumUser -> forumUser.getNumberPosts() >= 1)
                 .collect(Collectors.toMap(ForumUser::getUserId, forumUser -> forumUser));
 

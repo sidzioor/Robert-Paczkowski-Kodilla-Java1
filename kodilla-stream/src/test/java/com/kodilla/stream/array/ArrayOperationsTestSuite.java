@@ -17,4 +17,15 @@ public class ArrayOperationsTestSuite {
         //Then
         Assert.assertEquals(615.789,averageOfNumbers, 0.001);
     }
+    @Test
+    public void testGetAverageWithEmptyTable(){
+        //Given
+        int numbers[] = {};
+
+        //When
+        double averageOfNumbers = getAverage(numbers);
+
+        //Then
+        Assert.assertEquals(0.000,averageOfNumbers,0.001);
+    }
 }

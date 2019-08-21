@@ -7,7 +7,7 @@ import java.util.List;
 public class Airports {
     private HashMap<String, List<String>> locationsOfAirports = new HashMap<>();
 
-    public HashMap<String, List<String>> addConnectionsBetweenAirports() {
+    public Airports() {
         List<String> locationsOfFlightsFromWarszawa = Arrays.asList("Olsztyn", "Wroclaw", "Krakow", "Gdansk");
         List<String> locationsOfFlightsFromGdansk = Arrays.asList("Warszawa", "Krakow");
         List<String> locationsOfFlightsFromWroclaw = Arrays.asList("Warszawa", "Gdansk");
@@ -18,7 +18,10 @@ public class Airports {
         locationsOfAirports.put("Krakow", locationsOfFlightsFromKrakow);
         locationsOfAirports.put("Wroclaw", locationsOfFlightsFromWroclaw);
         locationsOfAirports.put("Gdansk", locationsOfFlightsFromGdansk);
-        return new HashMap<>(locationsOfAirports);
+    }
+
+    public HashMap<String, List<String>> getLocationsOfAirports() {
+        return locationsOfAirports;
     }
 
     @Override

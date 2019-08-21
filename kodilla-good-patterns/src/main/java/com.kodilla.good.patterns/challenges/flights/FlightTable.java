@@ -10,21 +10,21 @@ public class FlightTable {
 
     public void showFlightsFrom(String locationOfAirport) {
         System.out.println("Flight from: " + locationOfAirport);
-        airports.addConnectionsBetweenAirports().get(locationOfAirport).stream()
+        airports.getLocationsOfAirports().get(locationOfAirport).stream()
                 .forEach(System.out::println);
         System.out.println('\n');
     }
     public void showFlightsTo(String locationOfAirport){
         System.out.println("Flights to: " + locationOfAirport);
-        airports.addConnectionsBetweenAirports().entrySet().stream()
+        airports.getLocationsOfAirports().entrySet().stream()
                 .filter(airport -> airport.getValue().contains(locationOfAirport))
                 .map(Map.Entry::getKey)
                 .forEach(System.out::println);
     }
     public void showFlightsWithStopover(String startLocationAirport, String destinationAirport){
         System.out.println();
-        List<String> results1 = airports.addConnectionsBetweenAirports().get(startLocationAirport);
-        List<String> results2 =  airports.addConnectionsBetweenAirports().entrySet().stream()
+        List<String> results1 = airports.getLocationsOfAirports().get(startLocationAirport);
+        List<String> results2 =  airports.getLocationsOfAirports().entrySet().stream()
                 .filter(airport->airport.getValue().contains(destinationAirport))
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());

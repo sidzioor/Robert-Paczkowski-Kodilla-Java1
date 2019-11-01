@@ -1,6 +1,7 @@
 package com.kodilla.hibernate.task.dao;
 
 import com.kodilla.hibernate.task.Task;
+import com.kodilla.hibernate.task.TaskFinancialDetails;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,6 +50,22 @@ public class TaskDaoTestSuite {
 
         //CleanUp
         int id = readTasks.get(0).getId();
+        taskDao.deleteById(id);
+    }
+    @Test
+    public void testTaskDaoSaveWithFinancialDetails(){
+        //Given
+        Task task = new Task(DESCRIPTION, 7);
+        task.setTaskFinancialDetails(new TaskFinancialDetails());
+
+        //When
+        taskDao.save(task);
+        int id = task.getId();
+
+        //Then
+        Assert.assertNotEquals(0, id);
+
+        // CleanUp
         taskDao.deleteById(id);
     }
 }

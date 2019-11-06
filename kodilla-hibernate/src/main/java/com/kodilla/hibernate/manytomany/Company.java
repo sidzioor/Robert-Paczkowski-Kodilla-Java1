@@ -5,10 +5,16 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.FindCompanyByThreeFirstLetters",
+        query = "SELECT * FROM COMPANIES " +
+                "WHERE locate(:FIRSTLETTERS, COMPANY_NAME)=1",
+        resultClass = Company.class
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
-    private int id;
+    private Integer id;
     private String name;
     private List<Employee> employees = new ArrayList<>();
 
@@ -20,9 +26,9 @@ public class Company {
     }
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue
     @Column(name = "COMPANY_ID", unique = true)
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -31,6 +37,7 @@ public class Company {
     public String getName() {
         return name;
     }
+
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;

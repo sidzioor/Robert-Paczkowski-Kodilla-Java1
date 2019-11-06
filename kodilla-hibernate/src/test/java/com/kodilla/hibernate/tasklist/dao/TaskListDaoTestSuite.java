@@ -20,11 +20,10 @@ import java.util.List;
 public class TaskListDaoTestSuite {
     @Autowired
     private TaskListDao taskListDao;
-    private static String LISTNAME = "ToDo List";
-    private String DESCRIPTION = "Test: First exercise from Hibernate";
     @Autowired
     private TaskDao taskDao;
-
+    private static String LISTNAME = "ToDo List";
+    private String DESCRIPTION = "Test: First exercise from Hibernate";
     @Test
     public void testFindByListName(){
         //Given
@@ -103,12 +102,14 @@ public class TaskListDaoTestSuite {
         List<Task> longTasks = taskDao.retrieveLongTasks();
         List<Task> shortTask = taskDao.retrieveShortTasks();
         List<Task> enoughTimeTasks = taskDao.retrieveTasksWithEnoughTime();
+        List<Task> durationLongerThanTasks = taskDao.retrieveTasksWithDurationLongerThan(6);
 
         //Then
         try{
             Assert.assertEquals(1, longTasks.size());
             Assert.assertEquals(3, shortTask.size());
             Assert.assertEquals(3, enoughTimeTasks.size());
+            Assert.assertEquals(2, durationLongerThanTasks.size());
         }finally {
             //CleanUp
             taskListDao.deleteById(id);
